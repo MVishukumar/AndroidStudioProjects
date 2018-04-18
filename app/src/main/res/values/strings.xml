@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DiaryApp</string>
+    <string name="main_title">Daybook</string>
+    <string name="main_subtitle">Your personal diary</string>
+    <string name="main_question">How are you feeling today?</string>
+    <string name="sub_question">What made you feel</string>
+    <string name="happy_text">Happy</string>
+    <string name="sad_text">Sad</string>
+    <string name="angry_text">Angry</string>
+    <string name="joyful_text">Joyful</string>
+    <string name="motivated_text">Motivated</string>
+    <string name="confused_text">Confused</string>
+    <string name="pick_your_mood">Pick your mood?</string>
+    <string name="what_made_you_feel">What made you feel</string>
+    <string name="today">today?</string>
+    <string name="question_mark">\?</string>
+</resources>
