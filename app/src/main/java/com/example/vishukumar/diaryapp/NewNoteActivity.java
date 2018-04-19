@@ -350,11 +350,13 @@ public class NewNoteActivity extends AppCompatActivity {
                 break;
             case R.id.btn_id_2:
                 Log.d("tag", "Analyse button clicked");
+                Intent i = new Intent(NewNoteActivity.this, BarChartResultPage.class);
+                startActivity(i);
                 break;
             case R.id.btn_id_3:
                 Log.d("tag", "View Notes button clicked");
-                Intent i = new Intent(NewNoteActivity.this, AllNotesActivity.class);
-                startActivity(i);
+                Intent i2 = new Intent(NewNoteActivity.this, AllNotesActivity.class);
+                startActivity(i2);
                 break;
         }
     }

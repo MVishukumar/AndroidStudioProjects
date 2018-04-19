@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,8 +39,20 @@ public class DiaryStatusAdapter extends RecyclerView.Adapter<DiaryStatusAdapter.
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         final DiaryStatus diaryStatus = diaryStatusList.get(position);
 
+        String mood = diaryStatus.getMood();
+
+        switch (mood.toUpperCase()) {
+            case "HAPPY": holder.imageView.setImageResource(R.drawable.happy);  break;
+            case "SAD": holder.imageView.setImageResource(R.drawable.sad); break;
+            case "ANGRY": holder.imageView.setImageResource(R.drawable.angry); break;
+            case "JOYFUL": holder.imageView.setImageResource(R.drawable.joyful); break;
+            case "MOTIVATED": holder.imageView.setImageResource(R.drawable.motivated); break;
+            case "CONFUSED": holder.imageView.setImageResource(R.drawable.confused); break;
+        }
+
+        //holder.imageView.setImageResource(R.drawable.happy);
         holder.textView1.setText(diaryStatus.getDate());
-        holder.textView2.setText(diaryStatus.getMood());
+        holder.textView2.setText(mood);
         holder.textView3.setText(diaryStatus.getDescription());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +76,7 @@ public class DiaryStatusAdapter extends RecyclerView.Adapter<DiaryStatusAdapter.
 
     class StudentViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView imageView;
         TextView textView1;
         TextView textView2;
         TextView textView3;
@@ -71,6 +85,7 @@ public class DiaryStatusAdapter extends RecyclerView.Adapter<DiaryStatusAdapter.
         public StudentViewHolder(View itemView) {
             super(itemView);
 
+            imageView = (ImageView) itemView.findViewById(R.id.id_imageView_1);
             textView1 = (TextView) itemView.findViewById(R.id.dateTextViewid);
             textView2 = (TextView) itemView.findViewById(R.id.moodTextViewid);
             textView3 = (TextView) itemView.findViewById(R.id.descTextViewid);

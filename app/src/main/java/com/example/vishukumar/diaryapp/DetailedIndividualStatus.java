@@ -22,6 +22,8 @@ public class DetailedIndividualStatus extends AppCompatActivity {
         mMood = bundle.getString("_MOOD");
         mDesc = bundle.getString("_DESC");
 
+
+
         imageView = (ImageView) findViewById(R.id.imageView3);
         textView1 = (TextView) findViewById(R.id.id_tv_date);
         textView2 = (TextView) findViewById(R.id.id_tv_mood);
@@ -30,6 +32,15 @@ public class DetailedIndividualStatus extends AppCompatActivity {
         textView1.setText(mDate);
         textView2.setText(mMood);
         textView3.setText(mDesc);
+
+        switch (mMood.toUpperCase()) {
+            case "HAPPY": imageView.setImageResource(R.drawable.happy);  break;
+            case "SAD": imageView.setImageResource(R.drawable.sad); break;
+            case "ANGRY": imageView.setImageResource(R.drawable.angry); break;
+            case "JOYFUL": imageView.setImageResource(R.drawable.joyful); break;
+            case "MOTIVATED": imageView.setImageResource(R.drawable.motivated); break;
+            case "CONFUSED": imageView.setImageResource(R.drawable.confused); break;
+        }
 
     }
 }
